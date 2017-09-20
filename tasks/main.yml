@@ -1,11 +1,11 @@
 ---
 # tasks file for python
 
-- name: Set dir_info,pkg_info fact in {{ ansible_distribution }} by {{ pkg_install_type }} install
+- name: Set dir_info,pkg_info fact in {{ ansible_distribution }} by {{ mode }} install
   set_fact:
     dir_info: "{{ dirs_info[ansible_os_family] }}"
-    pkg_info: "{{ packages_info[pkg_version][ansible_os_family] }}"
+    pkg_info: "{{ packages_info[version][ansible_os_family] }}"
 
-- name: Include Windows-{{ pkg_install_type }}.yml in {{ ansible_distribution }} by {{ pkg_install_type }} install
-  include: Window-{{ pkg_install_type }}.yml
+- name: Include Windows-{{ mode }}.yml in {{ ansible_distribution }} by {{ mode }} install
+  include: Window-{{ mode }}.yml
 

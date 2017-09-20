@@ -5,11 +5,11 @@
   with_items:
     - "{{ dir_info.tmp }}"
 
-- name: Download {{ pkg_name }} install package in {{ ansible_distribution }} by pull install
+- name: Download {{ id }} install package in {{ ansible_distribution }} by pull install
   win_get_url: url={{ pkg_info.pull }} dest={{ dir_info.tmp }}//{{ pkg_info.file }}
 
-- name: Install {{ pkg_name }} in {{ ansible_distribution }} by pull install
-  win_chocolatey: name={{ pkg_name }}{{ pkg_version }}.install source={{ dir_info.tmp }} state=present
+- name: Install {{ id }} in {{ ansible_distribution }} by pull install
+  win_chocolatey: name={{ id }}{{ version }}.install source={{ dir_info.tmp }} state=present
 
-- name: Remove {{ pkg_name }} install package in {{ ansible_distribution }} by pull install
+- name: Remove {{ id }} install package in {{ ansible_distribution }} by pull install
   win_file: path={{ dir_info.tmp }}//{{ pkg_info.file }} state=absent

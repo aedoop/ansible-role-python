@@ -6,7 +6,11 @@ dirs_info:
     tmp: C:\tmp
 
 packages_info:
-  2:
+  2.x:
     Windows:
       file: python2.install.2.7.13.nupkg
       pull: ftp://10.0.250.100/pub/python/window/python2.install.2.7.13.nupkg
+  3.x:
+    Windows:
+      file: python3.install.3.6.2.nupkg
+      pull: ftp://10.0.250.100/pub/python/window/python3.install.3.6.2.nupkg
